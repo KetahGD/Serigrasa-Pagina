@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SERIGARSA | Servicios</title>
+  <meta name="description" content="SERIGARSA: impresión, publicidad, diseño, productos personalizados, DTF textil, bolsas, tazas, termos, lonas, tarjetas, volantes y cotización por WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function(){
+      const saved = localStorage.getItem("serigarsa-theme");
+      if(saved === "dark" || (!saved && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)){
+        document.documentElement.setAttribute("data-theme","dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="topbar">SERIGARSA · Impresión, publicidad, diseño y productos personalizados</div>
+  <header>
+    <div class="nav">
+      <a class="brand" href="informacion-general.html">
+        <div class="brand-logo"><img src="assets/img/logo/logo-serigarsa.jpg" alt="Logo SERIGARSA"></div>
+        <div><strong>SERIGARSA</strong><small>Publicidad y diseño</small></div>
+      </a>
+      <div class="nav-actions">
+        <button class="btn" onclick="toggleTheme()" type="button">🌙 / ☀️</button>
+        <a class="btn btn-wa" target="_blank" href="https://wa.me/525544940431?text=Hola,%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20con%20SERIGARSA.">WhatsApp</a>
+        <a class="btn btn-primary" href="https://www.instagram.com/garsa.serigrafia/" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <nav class="tabs" aria-label="Secciones principales">
+      <a class="tab " href="informacion-general.html">Información General</a>
+<a class="tab active" href="servicios.html">Servicios</a>
+<a class="tab " href="productos.html">Productos</a>
+<a class="tab " href="cotizacion.html">Cotización</a>
+<a class="tab " href="contacto.html">Contacto</a>
+    </nav>
+
+    
+<section>
+  <div class="section-head">
+    <div><span class="eyebrow">Servicios</span><h2>Soluciones para impresión, publicidad y diseño</h2></div>
+    <p>Esta vista explica las áreas de trabajo antes de mostrar el catálogo de productos.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="icon">👕</div><h3>DTF textil</h3><p>Impresión DTF textil por metro lineal y aplicación en prendas personalizadas.</p><div class="chips"><span>Desde 3 piezas</span><span>Textil</span><span>Diseño personalizado</span></div></article>
+    <article class="card"><div class="icon">🧵</div><h3>Serigrafía</h3><p>Ideal para producciones por volumen, uniformes, bolsas, playeras y productos promocionales.</p><div class="chips"><span>Desde 100 piezas</span><span>Por tinta</span><span>Mayoreo</span></div></article>
+    <article class="card"><div class="icon">☕</div><h3>Sublimación</h3><p>Personalización de tazas, termos, vasos, playeras y productos promocionales.</p><div class="chips"><span>Desde 1 pieza</span><span>Regalos</span><span>Promocionales</span></div></article>
+    <article class="card"><div class="icon">✂️</div><h3>Corte vinil</h3><p>Aplicaciones visuales para prendas, productos, señalización y detalles gráficos.</p><div class="chips"><span>Desde 12 piezas</span><span>Vinil</span><span>Personalización</span></div></article>
+    <article class="card"><div class="icon">🖨️</div><h3>Gran formato</h3><p>Lonas, banners, materiales de alto impacto y publicidad visual para negocios.</p><div class="chips"><span>Lonas</span><span>Banners</span><span>Publicidad</span></div></article>
+    <article class="card"><div class="icon">📄</div><h3>Offset y papelería</h3><p>Tarjetas de presentación, volantes, etiquetas, stickers y materiales impresos.</p><div class="chips"><span>Tarjetas</span><span>Volantes</span><span>Etiquetas</span></div></article>
+  </div>
+
+  <div class="section-head" style="margin-top:42px">
+    <h2>Trabajos y proceso</h2>
+    <p>Imágenes de trabajos realizados y evidencia visual del proceso de producción.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Trabajos realizados</h3>
+      <p class="muted">Muestras reales para generar confianza y mostrar acabados, aplicaciones y variedad.</p>
+      <div class="gallery-mini"><img src="assets/img/trabajos/diseno-la-perla-preprensa-01.jpg" alt="Trabajo realizado por SERIGARSA"><img src="assets/img/trabajos/equipo-uniformado-cfe-02.jpg" alt="Trabajo realizado por SERIGARSA"><img src="assets/img/trabajos/proceso-serigrafia-bolsa-01.jpg" alt="Trabajo realizado por SERIGARSA"><img src="assets/img/trabajos/proceso-serigrafia-bolsa-va-01.jpg" alt="Trabajo realizado por SERIGARSA"></div>
+    </div>
+    <div class="contact-card">
+      <h3>Mira cómo trabajamos</h3>
+      <p class="muted">El video puede usarse como prueba del proceso de producción.</p>
+      <video src="assets/img/video/video-proceso-serigarsa-01.mp4" controls muted playsinline></video>
+    </div>
+  </div>
+</section>
+
+
+    <footer>
+      SERIGARSA · Publicidad, impresión y diseño · Sitio con 5 vistas independientes y modo oscuro.
+    </footer>
+  </main>
+  <a class="floating-wa" target="_blank" href="https://wa.me/525544940431?text=Hola,%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20con%20SERIGARSA.">💬 Cotizar</a>
+  <script src="script.js"></script>
+</body>
+</html>

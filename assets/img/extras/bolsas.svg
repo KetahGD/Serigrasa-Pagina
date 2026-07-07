@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Bolsas ecológicas">
+  <rect width="600" height="600" fill="#fffdf5"/>
+  <path d="M178 210h244l34 278H144l34-278Z" fill="#ffffff" stroke="#111111" stroke-width="16" stroke-linejoin="round"/>
+  <path d="M238 224c0-60 24-96 62-96s62 36 62 96" fill="none" stroke="#111111" stroke-width="16" stroke-linecap="round"/>
+  <rect x="219" y="306" width="162" height="108" rx="16" fill="#25d366"/>
+  <text x="300" y="374" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="#ffffff">ECO</text>
+  <circle cx="152" cy="168" r="44" fill="#f7ff00"/>
+  <circle cx="448" cy="168" r="44" fill="#f500c8"/>
+</svg>

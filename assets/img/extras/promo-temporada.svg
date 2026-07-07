@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-label="Promoción de temporada">
+  <rect width="640" height="800" fill="#f500c8"/>
+  <circle cx="520" cy="120" r="92" fill="#f7ff00"/>
+  <circle cx="120" cy="700" r="118" fill="#18d8e8"/>
+  <rect x="72" y="108" width="496" height="514" rx="28" fill="#ffffff" stroke="#111111" stroke-width="16"/>
+  <text x="320" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="62" font-weight="900" fill="#111111">PROMO</text>
+  <text x="320" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" font-weight="900" fill="#f500c8">TEMPORADA</text>
+  <rect x="148" y="390" width="344" height="34" rx="17" fill="#18d8e8"/>
+  <rect x="182" y="454" width="276" height="26" rx="13" fill="#111111"/>
+  <rect x="214" y="512" width="212" height="26" rx="13" fill="#f7ff00"/>
+</svg>

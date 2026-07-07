@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Tazas y termos">
+  <rect width="600" height="600" fill="#111111"/>
+  <path d="M232 138h136l-18 356H250L232 138Z" fill="#ffffff" stroke="#f7ff00" stroke-width="16" stroke-linejoin="round"/>
+  <rect x="218" y="104" width="164" height="44" rx="22" fill="#18d8e8" stroke="#ffffff" stroke-width="10"/>
+  <circle cx="300" cy="306" r="55" fill="#f500c8"/>
+  <text x="300" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="#ffffff">SG</text>
+  <path d="M392 252h34c45 0 45 110 0 110h-30" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-label="Ejemplos de trabajos realizados">
+  <rect width="640" height="800" fill="#fffdf5"/>
+  <rect x="74" y="86" width="220" height="270" rx="22" fill="#f7ff00" stroke="#111111" stroke-width="14"/>
+  <rect x="346" y="86" width="220" height="270" rx="22" fill="#18d8e8" stroke="#111111" stroke-width="14"/>
+  <rect x="74" y="432" width="492" height="210" rx="22" fill="#f500c8" stroke="#111111" stroke-width="14"/>
+  <text x="320" y="724" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="900" fill="#111111">TRABAJOS</text>
+  <text x="184" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="900" fill="#111111">SG</text>
+  <text x="456" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="900" fill="#ffffff">SG</text>
+  <text x="320" y="562" text-anchor="middle" font-family="Arial, sans-serif" font-size="56" font-weight="900" fill="#ffffff">MUESTRA</text>
+</svg>
