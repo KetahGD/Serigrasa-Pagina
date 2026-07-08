@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ketahgd.github.io/Serigrasa-Pagina/sitemap.xml
