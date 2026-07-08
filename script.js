@@ -30,23 +30,37 @@ document.addEventListener("DOMContentLoaded", () => {
     if(selected){
       const product = document.getElementById("producto");
       const msg = document.getElementById("mensaje");
-      if(product) product.value = "Otro producto";
+      if(product){
+        const existing = Array.from(product.options).find(option => option.textContent.trim() === selected);
+        if(existing){
+          product.value = existing.value;
+        } else {
+          const option = document.createElement("option");
+          option.textContent = selected;
+          option.value = selected;
+          product.appendChild(option);
+          product.value = selected;
+        }
+      }
       if(msg) msg.value = "Me interesa cotizar: " + selected + ".";
     }
 
     form.addEventListener("submit", function(e){
       e.preventDefault();
       const get = id => (document.getElementById(id)?.value || "").trim();
-      const text =
-        `Hola, quiero solicitar una cotización con SERIGARSA.%0A%0A` +
-        `Nombre: ${encodeURIComponent(get("nombre"))}%0A` +
-        `WhatsApp: ${encodeURIComponent(get("telefono"))}%0A` +
-        `Correo: ${encodeURIComponent(get("correo") || "No indicado")}%0A` +
-        `Producto/servicio: ${encodeURIComponent(get("producto"))}%0A` +
-        `Cantidad aproximada: ${encodeURIComponent(get("cantidad") || "Por definir")}%0A` +
-        `Fecha de entrega: ${encodeURIComponent(get("fecha") || "Por definir")}%0A` +
-        `Diseño: ${encodeURIComponent(get("diseno") || "Por definir")}%0A` +
-        `Detalles: ${encodeURIComponent(get("mensaje") || "Sin detalles adicionales")}`;
+      const message = [
+        "Hola, quiero solicitar una cotización con SERIGARSA.",
+        "",
+        `Nombre: ${get("nombre")}`,
+        `WhatsApp: ${get("telefono")}`,
+        `Correo: ${get("correo") || "No indicado"}`,
+        `Producto/servicio: ${get("producto")}`,
+        `Cantidad aproximada: ${get("cantidad") || "Por definir"}`,
+        `Fecha de entrega: ${get("fecha") || "Por definir"}`,
+        `Diseño: ${get("diseno") || "Por definir"}`,
+        `Detalles: ${get("mensaje") || "Sin detalles adicionales"}`
+      ].join("\n");
+      const text = encodeURIComponent(message);
       window.open("https://wa.me/525544940431?text=" + text, "_blank");
     });
   }
