@@ -51,3 +51,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+// Vista previa ampliada de imágenes
+document.addEventListener("DOMContentLoaded", () => {
+  let lightbox = document.querySelector(".image-lightbox");
+
+  if (!lightbox) {
+    lightbox = document.createElement("div");
+    lightbox.className = "image-lightbox";
+    lightbox.innerHTML = `
+      <button class="image-lightbox-close" type="button" aria-label="Cerrar vista previa">×</button>
+      <img src="" alt="Vista previa de imagen">
+      <div class="image-lightbox-caption"></div>
+    `;
+    document.body.appendChild(lightbox);
+  }
+
+  const lightboxImg = lightbox.querySelector("img");
+  const caption = lightbox.querySelector(".image-lightbox-caption");
+  const closeBtn = lightbox.querySelector(".image-lightbox-close");
+
+  const openLightbox = (img) => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || "Vista previa";
+    caption.textContent = img.alt || "";
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove("active");
+    lightboxImg.src = "";
+    document.body.style.overflow = "";
+  };
+
+  document.querySelectorAll(".product-media img, .gallery-mini img, .hero-card-img img, .preview-grid img").forEach((img) => {
+    img.setAttribute("tabindex", "0");
+    img.addEventListener("click", () => openLightbox(img));
+    img.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openLightbox(img);
+      }
+    });
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) closeLightbox();
+  });
+});
