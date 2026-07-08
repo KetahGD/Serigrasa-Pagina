@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SERIGARSA | Cotiza productos personalizados por WhatsApp</title>
-  <meta name="description" content="Solicita una cotización SERIGARSA por WhatsApp para DTF textil, playeras, bolsas, tazas, termos, lonas, tarjetas, volantes y más.">
+  <title>SERIGARSA | Cotiza productos personalizados por WhatsApp o correo</title>
+  <meta name="description" content="Solicita una cotización SERIGARSA por WhatsApp o correo para DTF textil, playeras, bolsas, tazas, termos, lonas, tarjetas, volantes y más.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="SERIGARSA">
   <meta name="theme-color" content="#111111">
@@ -12,18 +12,19 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
   <meta property="og:site_name" content="SERIGARSA">
-  <meta property="og:title" content="Cotiza con SERIGARSA por WhatsApp">
+  <meta property="og:title" content="Cotiza con SERIGARSA por WhatsApp o correo">
   <meta property="og:description" content="Formulario de cotización para productos personalizados, impresión, publicidad, DTF, serigrafía y promocionales.">
   <meta property="og:url" content="https://ketahgd.github.io/Serigrasa-Pagina/cotizacion.html">
   <meta property="og:image" content="https://ketahgd.github.io/Serigrasa-Pagina/assets/img/promociones/promo-grid.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cotiza con SERIGARSA por WhatsApp">
+  <meta name="twitter:title" content="Cotiza con SERIGARSA por WhatsApp o correo">
   <meta name="twitter:description" content="Envía datos de tu pedido y recibe atención para cotización personalizada.">
   <meta name="twitter:image" content="https://ketahgd.github.io/Serigrasa-Pagina/assets/img/promociones/promo-grid.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/img/logo/logo-serigarsa.jpg">
   <script>
     (function(){
       const saved = localStorage.getItem("serigarsa-theme");
@@ -34,17 +35,17 @@
   </script>
 </head>
 <body>
-  <div class="topbar">SERIGARSA · Impresión, publicidad, diseño y productos personalizados</div>
+  <div class="topbar">SERIGARSA · Impresión, publicidad y productos personalizados bajo cotización</div>
   <header>
     <div class="nav">
       <a class="brand" href="informacion-general.html">
         <div class="brand-logo"><img src="assets/img/logo/logo-serigarsa.jpg" alt="Logo SERIGARSA"></div>
-        <div><strong>SERIGARSA</strong><small>Publicidad y diseño</small></div>
+        <div><strong>SERIGARSA</strong><small>Publicidad impresa</small></div>
       </a>
       <div class="nav-actions">
-        <button class="btn" onclick="toggleTheme()" type="button">Cambiar tema</button>
-        <a class="btn btn-wa" target="_blank" href="https://wa.me/525544940431?text=Hola,%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20con%20SERIGARSA.">WhatsApp</a>
-        <a class="btn btn-primary" href="https://www.instagram.com/garsa.serigrafia/" target="_blank">Instagram</a>
+        <button class="btn icon-btn" onclick="toggleTheme()" type="button" aria-label="Cambiar tema"><span aria-hidden="true">&#9680;</span><span>Tema</span></button>
+        <a class="btn btn-wa" target="_blank" href="https://wa.me/525544940431?text=Hola,%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20con%20SERIGARSA."><span aria-hidden="true">WA</span><span>WhatsApp</span></a>
+        <a class="btn btn-primary" href="https://www.instagram.com/garsa.serigrafia/" target="_blank"><span aria-hidden="true">IG</span><span>Instagram</span></a>
       </div>
     </div>
   </header>
@@ -61,8 +62,8 @@
     
 <section>
   <div class="section-head">
-    <div><span class="eyebrow">Cotización</span><h2>Solicita información de tu pedido</h2></div>
-    <p>El formulario prepara un mensaje para WhatsApp con los datos del cliente y el producto solicitado. También se puede solicitar DTF textil, plotter y playeras de graduación.</p>
+    <div><span class="eyebrow">Cotización</span><h2>Solicita una cotización personalizada</h2></div>
+    <p>Compártenos los datos principales de tu pedido para revisar el producto, cantidad, técnica de impresión y fecha estimada de entrega.</p>
   </div>
   <div class="quote-layout">
     <form id="quoteForm">
@@ -100,39 +101,43 @@
         <option>Sí, pero necesito revisión</option>
         <option>No, necesito apoyo con diseño</option>
       </select>
-      <textarea id="mensaje" placeholder="Describe tu idea, colores, medidas, técnica, uso del producto o referencias."></textarea>
-      <button class="btn btn-wa" type="submit">Enviar cotización por WhatsApp</button>
+      <textarea id="mensaje" placeholder="Describe el producto, colores, medidas, uso, acabados o referencias importantes."></textarea>
+      <p class="quote-note">Importante: al enviar la solicitud por WhatsApp o correo, adjunta las imágenes, logotipo o PDF del diseño que deseas cotizar.</p>
+      <div class="quote-actions">
+        <button class="btn btn-wa" type="submit" data-send="whatsapp"><span aria-hidden="true">WA</span><span>Enviar por WhatsApp</span></button>
+        <button class="btn btn-mail" type="submit" data-send="email"><span aria-hidden="true">&#9993;</span><span>Enviar por correo</span></button>
+      </div>
     </form>
     <aside class="notice">
       <h3>Antes de cotizar</h3>
       <ul>
         <li>Los productos se trabajan bajo cotización personalizada.</li>
         <li>Para iniciar se solicita anticipo.</li>
-        <li>El diseño debe enviarse preferentemente en PDF o vector.</li>
-        <li>Si no cuenta con diseño, se puede apoyar con la preparación del archivo.</li>
+        <li>Adjunta imágenes, logotipo o PDF del diseño en tu mensaje de WhatsApp o correo.</li>
+        <li>Si no cuentas con archivo final, comparte una referencia clara para revisar tu solicitud.</li>
         <li>Los tiempos de entrega dependen de cantidad, técnica y disponibilidad.</li>
       </ul>
-      <span class="highlight">Cotización directa: 55 4494 0431</span>
+      <span class="highlight">WhatsApp: 55 4494 0431</span>
+      <span class="highlight secondary">Correo: garsa.serigrafia@gmail.com</span>
     </aside>
   </div>
   <div class="section-head" style="margin-top:42px">
     <h2>¿Cómo cotizar?</h2>
-    <p>Proceso claro para facilitar que el cliente envíe la información correcta.</p>
+    <p>Proceso recomendado para que podamos revisar tu solicitud con la información necesaria.</p>
   </div>
   <div class="process-grid">
     <div class="step"><div class="step-number">01</div><h4>Elige</h4><p>Selecciona el producto o servicio que necesitas.</p></div>
-    <div class="step"><div class="step-number">02</div><h4>Envía datos</h4><p>Comparte diseño, cantidad, medidas y fecha de entrega.</p></div>
-    <div class="step"><div class="step-number">03</div><h4>Recibe propuesta</h4><p>Se revisa tu pedido y se prepara la cotización.</p></div>
+    <div class="step"><div class="step-number">02</div><h4>Adjunta archivos</h4><p>Envía imágenes, logotipo o PDF del diseño que deseas cotizar.</p></div>
+    <div class="step"><div class="step-number">03</div><h4>Recibe atención</h4><p>Revisamos tu solicitud y preparamos la cotización correspondiente.</p></div>
     <div class="step"><div class="step-number">04</div><h4>Producción</h4><p>Se confirma el pedido y se inicia el trabajo.</p></div>
   </div>
 </section>
 
 
     <footer>
-      SERIGARSA · Publicidad, impresión y diseño · Sitio con 5 vistas independientes y modo oscuro.
+      SERIGARSA · Impresión, publicidad y productos personalizados bajo cotización.
     </footer>
   </main>
-  <a class="floating-wa" target="_blank" href="https://wa.me/525544940431?text=Hola,%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20con%20SERIGARSA.">Cotizar</a>
   <script src="script.js"></script>
 </body>
 </html>

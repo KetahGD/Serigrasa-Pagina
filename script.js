@@ -1,4 +1,3 @@
-
 (function(){
   const saved = localStorage.getItem("serigarsa-theme");
   if(saved === "dark" || (!saved && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)){
@@ -48,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function(e){
       e.preventDefault();
       const get = id => (document.getElementById(id)?.value || "").trim();
+      const action = e.submitter?.dataset.send || "whatsapp";
       const message = [
         "Hola, quiero solicitar una cotización con SERIGARSA.",
         "",
@@ -58,16 +58,22 @@ document.addEventListener("DOMContentLoaded", () => {
         `Cantidad aproximada: ${get("cantidad") || "Por definir"}`,
         `Fecha de entrega: ${get("fecha") || "Por definir"}`,
         `Diseño: ${get("diseno") || "Por definir"}`,
-        `Detalles: ${get("mensaje") || "Sin detalles adicionales"}`
+        `Detalles: ${get("mensaje") || "Sin detalles adicionales"}`,
+        "",
+        "Importante: adjunto imágenes, logotipo o PDF del diseño que deseo cotizar."
       ].join("\n");
       const text = encodeURIComponent(message);
+      if(action === "email"){
+        const subject = encodeURIComponent("Solicitud de cotización SERIGARSA");
+        window.location.href = "mailto:garsa.serigrafia@gmail.com?subject=" + subject + "&body=" + text;
+        return;
+      }
       window.open("https://wa.me/525544940431?text=" + text, "_blank");
     });
   }
 });
 
-
-// Vista previa ampliada de imágenes
+// Imagen ampliada para las galerías
 document.addEventListener("DOMContentLoaded", () => {
   let lightbox = document.querySelector(".image-lightbox");
 
@@ -75,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox = document.createElement("div");
     lightbox.className = "image-lightbox";
     lightbox.innerHTML = `
-      <button class="image-lightbox-close" type="button" aria-label="Cerrar vista previa">×</button>
-      <img src="" alt="Vista previa de imagen">
+      <button class="image-lightbox-close" type="button" aria-label="Cerrar imagen ampliada">x</button>
+      <img src="" alt="Imagen ampliada">
       <div class="image-lightbox-caption"></div>
     `;
     document.body.appendChild(lightbox);
@@ -88,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const openLightbox = (img) => {
     lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt || "Vista previa";
+    lightboxImg.alt = img.alt || "Imagen ampliada";
     caption.textContent = img.alt || "";
     lightbox.classList.add("active");
     document.body.style.overflow = "hidden";

@@ -51,9 +51,12 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 
 .brand small{display:block;color:var(--muted);font-weight:800;font-size:12px}
 .nav-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .btn{min-height:42px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-weight:900;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+.btn span,.mini-btn span{display:inline-flex;align-items:center;justify-content:center}
+.icon-btn{min-width:112px}
 .btn:hover,.mini-btn:hover,.arrow:hover{transform:translateY(-1px);box-shadow:var(--shadow-soft)}
 .btn-primary{background:linear-gradient(135deg,var(--magenta),#b900ec);border-color:var(--magenta);color:#fff;box-shadow:0 10px 22px rgba(245,0,200,.22)}
 .btn-wa{background:linear-gradient(135deg,var(--green),#18b957);border-color:var(--green);color:#fff}
+.btn-mail{background:linear-gradient(135deg,var(--cyan),#0aa6bd);border-color:var(--cyan);color:#111}
 .btn-dark{background:#111;border-color:#111;color:#fff}
 [data-theme="dark"] .btn-dark{background:#fff;color:#111;border-color:#fff}
 .layout{max-width:1200px;margin:auto;padding:22px 20px 70px}
@@ -111,8 +114,8 @@ h4{font-size:23px;margin:0 0 8px}
 .product-topline{width:max-content;background:linear-gradient(90deg,var(--yellow),#fff7a8);color:#111;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900}
 .product-info p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}
 .tag-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:3px}
-.product-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-.mini-btn{border:none;border-radius:999px;padding:11px 13px;font-size:13px;font-weight:900;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease}
+.product-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;padding-top:8px}
+.mini-btn{min-height:38px;border:none;border-radius:999px;padding:10px 12px;font-size:13px;font-weight:900;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-align:center;white-space:nowrap}
 .mini-btn.wa{background:var(--green);color:#fff}
 .mini-btn.outline{background:var(--surface);color:var(--ink);border:1.5px solid var(--ink)}
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
@@ -126,12 +129,15 @@ form{background:var(--surface);border:1px solid var(--line);border-radius:28px;p
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
 input,select,textarea{width:100%;border:1px solid var(--line);border-radius:16px;padding:14px 15px;background:var(--surface);color:var(--ink);outline:none}
 textarea{min-height:132px;resize:vertical}
+.quote-note{margin:0;color:var(--muted);font-size:14px;line-height:1.6;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:13px 14px;font-weight:700}
+.quote-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .notice{background:#111;color:#fff;border-radius:28px;padding:24px;box-shadow:var(--shadow)}
 [data-theme="dark"] .notice{background:#fff;color:#111}
 .notice h3{margin-bottom:10px}
 .notice ul{margin:0;padding-left:20px;line-height:1.8;color:#f0f0f0}
 [data-theme="dark"] .notice ul{color:#333}
 .notice .highlight{display:inline-block;margin-top:16px;background:var(--yellow);color:#111;border-radius:999px;padding:9px 13px;font-weight:900}
+.notice .highlight.secondary{background:var(--cyan);margin-left:8px}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .contact-card{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
 .contact-list{display:grid;gap:12px;margin-top:16px}
@@ -170,7 +176,7 @@ footer{margin-top:40px;padding:26px 0 0;color:var(--muted);text-align:center;fon
   .hero{min-height:auto;padding:8px 0 34px;gap:20px}
   .hero p{font-size:16px;line-height:1.65}
   .hero-actions .btn{width:100%}
-  .grid,.process-grid,.form-row{grid-template-columns:1fr}
+  .grid,.process-grid,.form-row,.quote-actions{grid-template-columns:1fr}
   .hero-stats{grid-template-columns:1fr}
   .hero-visual{min-height:380px;border-radius:24px}
   .hero-visual::before{width:260px;height:260px;left:34px;top:58px}
