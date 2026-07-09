@@ -40,6 +40,7 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 button,input,select,textarea{font:inherit}
 main,section,article,div,p,h1,h2,h3,h4,a,span{min-width:0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .topbar{background:#111;color:#fff;padding:10px 16px;text-align:center;font-size:14px;font-weight:800}
 [data-theme="dark"] .topbar{background:#000}
 header{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
@@ -58,6 +59,9 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 
 .btn-wa{background:linear-gradient(135deg,var(--green),#18b957);border-color:var(--green);color:#fff}
 .btn-mail{background:linear-gradient(135deg,var(--cyan),#0aa6bd);border-color:var(--cyan);color:#111}
 .btn-dark{background:#111;border-color:#111;color:#fff}
+.icon-link{width:54px;min-width:54px;padding:0}
+.social-icon-img{width:23px;height:23px;object-fit:contain;display:block}
+.icon-link .social-icon-img{filter:none}
 [data-theme="dark"] .btn-dark{background:#fff;color:#111;border-color:#fff}
 .layout{max-width:1200px;margin:auto;padding:22px 20px 70px}
 .tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:0 0 26px}
@@ -145,8 +149,11 @@ textarea{min-height:132px;resize:vertical}
 .contact-item strong{display:block}
 .contact-item span{color:var(--muted);line-height:1.45}
 .socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.socials a{background:#111;color:#fff;border-radius:999px;padding:11px 14px;font-weight:900;font-size:14px}
+.socials a{background:#111;color:#fff;border-radius:999px;padding:11px 14px;font-weight:900;font-size:14px;min-height:42px;display:inline-flex;align-items:center;justify-content:center}
+.socials a.social-icon-link{width:48px;padding:0}
+.socials .social-icon-img{filter:invert(1)}
 [data-theme="dark"] .socials a{background:#fff;color:#111}
+[data-theme="dark"] .socials .social-icon-img{filter:none}
 .gallery-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
 .gallery-mini img{width:100%;height:160px;object-fit:cover;border-radius:18px;border:1px solid var(--line)}
 video{width:100%;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow);background:#000}
@@ -173,6 +180,7 @@ footer{margin-top:40px;padding:26px 0 0;color:var(--muted);text-align:center;fon
   .brand strong{font-size:18px}
   .nav-actions{justify-content:flex-start;width:100%}
   .nav-actions .btn{flex:1 1 calc(50% - 6px);min-width:138px;padding:0 12px}
+  .nav-actions .icon-link{flex:0 0 54px;min-width:54px;padding:0}
   .hero{min-height:auto;padding:8px 0 34px;gap:20px}
   .hero p{font-size:16px;line-height:1.65}
   .hero-actions .btn{width:100%}
@@ -204,6 +212,7 @@ footer{margin-top:40px;padding:26px 0 0;color:var(--muted);text-align:center;fon
 @media(max-width:420px){
   .layout{padding-left:12px;padding-right:12px}
   .nav-actions .btn{flex-basis:100%}
+  .nav-actions .icon-link{flex-basis:54px}
   .tabs{gap:7px}
   .tab{min-height:44px;font-size:14px}
   .hero-visual{min-height:340px}
