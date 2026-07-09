@@ -22,6 +22,11 @@ function scrollCarousel(id, amount){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const activeTab = document.querySelector(".tabs .tab.active");
+  if (activeTab && window.matchMedia("(max-width: 960px)").matches) {
+    activeTab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }
+
   const form = document.getElementById("quoteForm");
   if(form){
     const params = new URLSearchParams(window.location.search);
@@ -91,11 +96,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxImg = lightbox.querySelector("img");
   const caption = lightbox.querySelector(".image-lightbox-caption");
   const closeBtn = lightbox.querySelector(".image-lightbox-close");
+  const escapeHtml = (value) => value.replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[char]);
 
   const openLightbox = (img) => {
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt || "Imagen ampliada";
-    caption.textContent = img.alt || "";
+    const product = img.closest(".product-card");
+    if (product) {
+      const title = product.querySelector("h4")?.textContent.trim() || img.alt || "Producto";
+      const description = product.querySelector(".product-info p")?.textContent.trim() || "";
+      const tags = Array.from(product.querySelectorAll(".tag-list span")).map(tag => tag.textContent.trim()).filter(Boolean);
+      caption.innerHTML = `
+        <strong>${escapeHtml(title)}</strong>
+        ${description ? `<span>${escapeHtml(description)}</span>` : ""}
+        ${tags.length ? `<small>${tags.map(escapeHtml).join(" · ")}</small>` : ""}
+      `;
+    } else {
+      caption.textContent = img.alt || "";
+    }
     lightbox.classList.add("active");
     document.body.style.overflow = "hidden";
   };
