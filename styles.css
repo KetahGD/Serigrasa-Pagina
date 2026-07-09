@@ -142,6 +142,17 @@ textarea{min-height:132px;resize:vertical}
 [data-theme="dark"] .notice ul{color:#333}
 .notice .highlight{display:inline-block;margin-top:16px;background:var(--yellow);color:#111;border-radius:999px;padding:9px 13px;font-weight:900}
 .notice .highlight.secondary{background:var(--cyan);margin-left:8px}
+.terms-panel{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-top:22px}
+.terms-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow-soft)}
+.terms-card h3{margin:6px 0 12px;font-size:24px}
+.terms-card ul{margin:0;padding-left:19px;color:var(--muted);line-height:1.65;font-size:14px}
+.terms-card li+li{margin-top:6px}
+.payment-card{background:linear-gradient(180deg,color-mix(in srgb,var(--yellow) 14%,var(--surface)),var(--surface))}
+.payment-data{display:grid;gap:12px;margin:16px 0}
+.payment-data div{background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:13px 14px}
+.payment-data dt{font-size:12px;text-transform:uppercase;font-weight:900;color:var(--muted);letter-spacing:0}
+.payment-data dd{margin:4px 0 0;font-weight:900;font-size:18px;line-height:1.25}
+.payment-note{margin:0;background:var(--cyan);color:#111;border-radius:16px;padding:13px 14px;font-weight:900;line-height:1.5}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .contact-card{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
 .contact-list{display:grid;gap:12px;margin-top:16px}
@@ -160,7 +171,7 @@ video{width:100%;border-radius:22px;border:1px solid var(--line);box-shadow:var(
 .floating-wa{position:fixed;right:22px;bottom:22px;z-index:90;background:var(--green);color:#fff;border-radius:999px;padding:15px 18px;font-weight:900;box-shadow:0 12px 34px rgba(0,0,0,.24)}
 footer{margin-top:40px;padding:26px 0 0;color:var(--muted);text-align:center;font-size:13px}
 @media(max-width:960px){
-  .hero,.quote-layout,.contact-grid{grid-template-columns:1fr}
+  .hero,.quote-layout,.terms-panel,.contact-grid{grid-template-columns:1fr}
   .grid{grid-template-columns:1fr 1fr}
   .process-grid{grid-template-columns:1fr 1fr}
   .tabs{grid-template-columns:1fr 1fr}
