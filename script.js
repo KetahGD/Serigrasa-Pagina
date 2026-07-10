@@ -89,87 +89,82 @@ document.addEventListener("DOMContentLoaded", () => {
   debugPanel.className = "visual-debug";
   const hasHeroModes = Boolean(document.querySelector("[data-hero-view]"));
   debugPanel.innerHTML = `
-    <button class="visual-debug-toggle" type="button" aria-expanded="false" aria-controls="visualDebugPanel">Pruebas visuales</button>
-    <div class="visual-debug-panel" id="visualDebugPanel" hidden>
-      <strong>Comparaci&oacute;n de formatos</strong>
-      ${hasHeroModes ? `
+    <details class="visual-debug-shell">
+      <summary class="visual-debug-toggle">Pruebas visuales</summary>
+      <div class="visual-debug-panel" id="visualDebugPanel">
+        <strong>Comparaci&oacute;n de formatos</strong>
+        ${hasHeroModes ? `
+          <details class="visual-debug-group">
+            <summary>Inicio visual</summary>
+            <div class="visual-debug-options" role="group" aria-label="Seleccionar presentaci&oacute;n inicial">
+              <button type="button" data-hero-mode="collage" aria-pressed="true">Collage</button>
+              <button type="button" data-hero-mode="classic" aria-pressed="false">Cl&aacute;sica</button>
+            </div>
+          </details>
+        ` : ""}
         <details class="visual-debug-group">
-          <summary>Inicio visual</summary>
-          <div class="visual-debug-options" role="group" aria-label="Seleccionar presentaci&oacute;n inicial">
-            <button type="button" data-hero-mode="collage" aria-pressed="true">Collage</button>
-            <button type="button" data-hero-mode="classic" aria-pressed="false">Cl&aacute;sica</button>
+          <summary>Fondo general</summary>
+          <div class="visual-debug-options" role="group" aria-label="Seleccionar fondo experimental">
+            <button type="button" data-bg-mode="none" aria-pressed="true">Sin fondo</button>
+            <button type="button" data-bg-mode="brick" aria-pressed="false">Ladrillo</button>
+            <button type="button" data-bg-mode="halftone" aria-pressed="false">Trama</button>
+            <button type="button" data-bg-mode="grid" aria-pressed="false">Ret&iacute;cula</button>
+            <button type="button" data-bg-mode="diagonal" aria-pressed="false">Diagonal</button>
           </div>
         </details>
-      ` : ""}
-      <details class="visual-debug-group">
-        <summary>Fondo general</summary>
-        <div class="visual-debug-options" role="group" aria-label="Seleccionar fondo experimental">
-          <button type="button" data-bg-mode="none" aria-pressed="true">Sin fondo</button>
-          <button type="button" data-bg-mode="brick" aria-pressed="false">Ladrillo</button>
-          <button type="button" data-bg-mode="halftone" aria-pressed="false">Trama</button>
-          <button type="button" data-bg-mode="grid" aria-pressed="false">Ret&iacute;cula</button>
-          <button type="button" data-bg-mode="diagonal" aria-pressed="false">Diagonal</button>
-        </div>
-      </details>
-      <details class="visual-debug-group">
-        <summary>Color base</summary>
-        <div class="visual-debug-options color-options" role="group" aria-label="Seleccionar color de fondo">
-          <button type="button" data-color-mode="default" aria-pressed="true">Base</button>
-          <button type="button" data-color-mode="ink" aria-pressed="false">Negro</button>
-          <button type="button" data-color-mode="graphite" aria-pressed="false">Grafito</button>
-          <button type="button" data-color-mode="petrol" aria-pressed="false">Petr&oacute;leo</button>
-          <button type="button" data-color-mode="purple" aria-pressed="false">Morado</button>
-          <button type="button" data-color-mode="green" aria-pressed="false">Verde</button>
-        </div>
-      </details>
-      <details class="visual-debug-group">
-        <summary>Acento</summary>
-        <div class="visual-debug-options color-options" role="group" aria-label="Seleccionar color de acento">
-          <button type="button" data-accent-mode="default" aria-pressed="true">CMYK</button>
-          <button type="button" data-accent-mode="cyan" aria-pressed="false">Cyan</button>
-          <button type="button" data-accent-mode="magenta" aria-pressed="false">Magenta</button>
-          <button type="button" data-accent-mode="yellow" aria-pressed="false">Yellow</button>
-          <button type="button" data-accent-mode="green" aria-pressed="false">Verde</button>
-          <button type="button" data-accent-mode="white" aria-pressed="false">Blanco</button>
-        </div>
-      </details>
-      <details class="visual-debug-group">
-        <summary>Tarjetas</summary>
-        <div class="visual-debug-options" role="group" aria-label="Seleccionar estilo de tarjetas">
-          <button type="button" data-card-mode="default" aria-pressed="true">Base</button>
-          <button type="button" data-card-mode="glass" aria-pressed="false">Cristal</button>
-          <button type="button" data-card-mode="neon" aria-pressed="false">Neon</button>
-          <button type="button" data-card-mode="minimal" aria-pressed="false">Limpio</button>
-        </div>
-      </details>
-      <details class="visual-debug-group">
-        <summary>Im&aacute;genes</summary>
-        <div class="visual-debug-options" role="group" aria-label="Seleccionar forma de im&aacute;genes">
-          <button type="button" data-image-mode="default" aria-pressed="true">Base</button>
-          <button type="button" data-image-mode="soft" aria-pressed="false">Suave</button>
-          <button type="button" data-image-mode="sharp" aria-pressed="false">Recta</button>
-          <button type="button" data-image-mode="tilt" aria-pressed="false">Din&aacute;mica</button>
-        </div>
-      </details>
-      <details class="visual-debug-group">
-        <summary>Movimiento</summary>
-        <div class="visual-debug-options" role="group" aria-label="Seleccionar intensidad visual">
-          <button type="button" data-motion-mode="default" aria-pressed="true">Base</button>
-          <button type="button" data-motion-mode="calm" aria-pressed="false">Calma</button>
-          <button type="button" data-motion-mode="impact" aria-pressed="false">Impacto</button>
-        </div>
-      </details>
-      <small>Opciones locales para comparar estilos sin dejarlos fijos.</small>
-    </div>
+        <details class="visual-debug-group">
+          <summary>Color base</summary>
+          <div class="visual-debug-options color-options" role="group" aria-label="Seleccionar color de fondo">
+            <button type="button" data-color-mode="default" aria-pressed="true">Base</button>
+            <button type="button" data-color-mode="ink" aria-pressed="false">Negro</button>
+            <button type="button" data-color-mode="graphite" aria-pressed="false">Grafito</button>
+            <button type="button" data-color-mode="petrol" aria-pressed="false">Petr&oacute;leo</button>
+            <button type="button" data-color-mode="purple" aria-pressed="false">Morado</button>
+            <button type="button" data-color-mode="green" aria-pressed="false">Verde</button>
+          </div>
+        </details>
+        <details class="visual-debug-group">
+          <summary>Acento</summary>
+          <div class="visual-debug-options color-options" role="group" aria-label="Seleccionar color de acento">
+            <button type="button" data-accent-mode="default" aria-pressed="true">CMYK</button>
+            <button type="button" data-accent-mode="cyan" aria-pressed="false">Cyan</button>
+            <button type="button" data-accent-mode="magenta" aria-pressed="false">Magenta</button>
+            <button type="button" data-accent-mode="yellow" aria-pressed="false">Yellow</button>
+            <button type="button" data-accent-mode="green" aria-pressed="false">Verde</button>
+            <button type="button" data-accent-mode="white" aria-pressed="false">Blanco</button>
+          </div>
+        </details>
+        <details class="visual-debug-group">
+          <summary>Tarjetas</summary>
+          <div class="visual-debug-options" role="group" aria-label="Seleccionar estilo de tarjetas">
+            <button type="button" data-card-mode="default" aria-pressed="true">Base</button>
+            <button type="button" data-card-mode="glass" aria-pressed="false">Cristal</button>
+            <button type="button" data-card-mode="neon" aria-pressed="false">Neon</button>
+            <button type="button" data-card-mode="minimal" aria-pressed="false">Limpio</button>
+          </div>
+        </details>
+        <details class="visual-debug-group">
+          <summary>Im&aacute;genes</summary>
+          <div class="visual-debug-options" role="group" aria-label="Seleccionar forma de im&aacute;genes">
+            <button type="button" data-image-mode="default" aria-pressed="true">Base</button>
+            <button type="button" data-image-mode="soft" aria-pressed="false">Suave</button>
+            <button type="button" data-image-mode="sharp" aria-pressed="false">Recta</button>
+            <button type="button" data-image-mode="tilt" aria-pressed="false">Din&aacute;mica</button>
+          </div>
+        </details>
+        <details class="visual-debug-group">
+          <summary>Movimiento</summary>
+          <div class="visual-debug-options" role="group" aria-label="Seleccionar intensidad visual">
+            <button type="button" data-motion-mode="default" aria-pressed="true">Base</button>
+            <button type="button" data-motion-mode="calm" aria-pressed="false">Calma</button>
+            <button type="button" data-motion-mode="impact" aria-pressed="false">Impacto</button>
+          </div>
+        </details>
+        <small>Opciones locales para comparar estilos sin dejarlos fijos.</small>
+      </div>
+    </details>
   `;
   document.body.appendChild(debugPanel);
-  const debugToggle = debugPanel.querySelector(".visual-debug-toggle");
-  const debugContent = debugPanel.querySelector(".visual-debug-panel");
-  debugToggle.addEventListener("click", () => {
-    const isOpen = debugContent.hidden;
-    debugContent.hidden = !isOpen;
-    debugToggle.setAttribute("aria-expanded", String(isOpen));
-  });
   const debugGroups = debugPanel.querySelectorAll(".visual-debug-group");
   debugGroups.forEach((group) => {
     group.addEventListener("toggle", () => {
