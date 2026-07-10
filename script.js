@@ -1,31 +1,34 @@
-(function(){
-  const saved = localStorage.getItem("serigarsa-theme");
-  if(saved === "dark" || (!saved && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)){
-    document.documentElement.setAttribute("data-theme","dark");
-  }
-})();
-
-function toggleTheme(){
-  const current = document.documentElement.getAttribute("data-theme");
-  const next = current === "dark" ? "light" : "dark";
-  if(next === "dark"){
-    document.documentElement.setAttribute("data-theme","dark");
-  } else {
-    document.documentElement.removeAttribute("data-theme");
-  }
-  localStorage.setItem("serigarsa-theme", next);
-}
-
 function scrollCarousel(id, amount){
   const el = document.getElementById(id);
   if(el) el.scrollBy({ left: amount, behavior: "smooth" });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const activeTab = document.querySelector(".tabs .tab.active");
-  if (activeTab && window.matchMedia("(max-width: 960px)").matches) {
-    activeTab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  const sidebar = document.querySelector(".sidebar");
+  const sidebarToggle = document.querySelector("[data-sidebar-toggle]");
+  const sidebarCloseControls = document.querySelectorAll("[data-sidebar-close]");
+  const sidebarLinks = document.querySelectorAll(".sidebar-nav a");
+  const setSidebarState = (open) => {
+    document.body.classList.toggle("sidebar-open", open);
+    if (sidebar) sidebar.setAttribute("aria-hidden", String(!open));
+    if (sidebarToggle) sidebarToggle.setAttribute("aria-expanded", String(open));
+  };
+  if (sidebarToggle) {
+    sidebarToggle.addEventListener("click", () => {
+      setSidebarState(!document.body.classList.contains("sidebar-open"));
+    });
   }
+  sidebarCloseControls.forEach((control) => {
+    control.addEventListener("click", () => setSidebarState(false));
+  });
+  sidebarLinks.forEach((link) => {
+    link.addEventListener("click", () => setSidebarState(false));
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("sidebar-open")) {
+      setSidebarState(false);
+    }
+  });
 
   const form = document.getElementById("quoteForm");
   if(form){

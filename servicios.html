@@ -25,14 +25,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="assets/img/logo/logo-serigarsa.jpg">
-  <script>
-    (function(){
-      const saved = localStorage.getItem("serigarsa-theme");
-      if(saved === "dark" || (!saved && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)){
-        document.documentElement.setAttribute("data-theme","dark");
-      }
-    })();
-  </script>
 </head>
 <body>
   <div class="topbar">SERIGARSA · Impresión, publicidad y productos personalizados bajo cotización</div>
@@ -43,7 +35,7 @@
         <div><strong>SERIGARSA</strong><small>Publicidad impresa</small></div>
       </a>
       <div class="nav-actions">
-        <button class="btn icon-btn" onclick="toggleTheme()" type="button" aria-label="Cambiar tema"><span aria-hidden="true">&#9680;</span><span>Tema</span></button>
+        <button class="btn menu-toggle" type="button" data-sidebar-toggle aria-controls="siteSidebar" aria-expanded="false"><span aria-hidden="true">?</span><span>Men?</span></button>
         <a class="btn btn-wa icon-link" target="_blank" href="https://wa.me/525544940431?text=Hola,%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20con%20SERIGARSA." aria-label="WhatsApp"><img class="social-icon-img" src="assets/icons/whatsapp.png" alt="" aria-hidden="true"><span class="sr-only">WhatsApp</span></a>
         <a class="btn btn-primary icon-link" href="https://www.instagram.com/garsa.serigrafia/" target="_blank" aria-label="Instagram"><img class="social-icon-img" src="assets/icons/instagram.png" alt="" aria-hidden="true"><span class="sr-only">Instagram</span></a>
       </div>
@@ -51,13 +43,17 @@
   </header>
 
   <main class="layout">
-    <nav class="tabs" aria-label="Secciones principales">
-      <a class="tab " href="informacion-general.html">Información General</a>
+    <button class="sidebar-backdrop" type="button" data-sidebar-close aria-label="Cerrar men&uacute;"></button>
+    <aside class="sidebar" id="siteSidebar" aria-label="Navegaci&oacute;n principal" aria-hidden="true">
+      <div class="sidebar-head"><strong>Men&uacute;</strong><button class="sidebar-close" type="button" data-sidebar-close aria-label="Cerrar men&uacute;">x</button></div>
+      <nav class="sidebar-nav">
+<a class="tab " href="informacion-general.html">Información General</a>
 <a class="tab active" href="servicios.html">Servicios</a>
 <a class="tab " href="productos.html">Productos</a>
 <a class="tab " href="cotizacion.html">Cotización</a>
 <a class="tab " href="contacto.html">Contacto</a>
-    </nav>
+      </nav>
+    </aside>
 
     
 <section>
@@ -142,7 +138,7 @@
         <div><span class="eyebrow">Video proceso</span><h2>Videos de producción</h2></div>
         <p>Videos para mostrar maquinaria, preparación y acabados reales, reforzando confianza antes de cotizar.</p>
       </div>
-      <div class="video-grid"><article class="video-card"><iframe src="https://drive.google.com/file/d/1dkvDsH-SisehJfPRZveQsGgbwRYfXwug/preview" title="Corte vinil textil y aplicación" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><div><strong>Corte vinil textil y aplicación</strong><p>Video del proceso de corte vinil y su aplicacion en superficies.</p></div></article><article class="video-card"><iframe src="https://drive.google.com/file/d/1t_0yvblxZTF4fmsVTXKi8ymCZuHB1Y8H/preview" title="Proceso DTF textil" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><div><strong>Proceso DTF textil</strong><p>Video del proceso DTF en el que se imprime y se aplica en una playera.</p></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-01.mp4" controls muted playsinline preload="metadata"></video><div><strong>Proceso SERIGARSA 01</strong><p>Video corto de producción.</p></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-02.mp4" controls muted playsinline preload="metadata"></video><div><strong>Proceso SERIGARSA 02</strong><p>Video corto de producción.</p></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-03.mp4" controls muted playsinline preload="metadata"></video><div><strong>Proceso SERIGARSA 03</strong><p>Video corto de producción.</p></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-04.mp4" controls muted playsinline preload="metadata"></video><div><strong>Proceso SERIGARSA 04</strong><p>Video corto de producción.</p></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-05.mp4" controls muted playsinline preload="metadata"></video><div><strong>Proceso SERIGARSA 05</strong><p>Video corto de producción.</p></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-06.mp4" controls muted playsinline preload="metadata"></video><div><strong>Proceso SERIGARSA 06</strong><p>Video corto de producción.</p></div></article></div>
+      <div class="video-grid"><article class="video-card"><iframe src="https://drive.google.com/file/d/1dkvDsH-SisehJfPRZveQsGgbwRYfXwug/preview" title="Corte vinil textil y aplicación" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><div><strong>Corte vinil textil y aplicación</strong><p>Video del proceso de corte vinil y su aplicacion en superficies.</p></div></article><article class="video-card"><iframe src="https://drive.google.com/file/d/1t_0yvblxZTF4fmsVTXKi8ymCZuHB1Y8H/preview" title="Proceso DTF textil" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe><div><strong>Proceso DTF textil</strong><p>Video del proceso DTF en el que se imprime y se aplica en una playera.</p></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-01.mp4" controls muted playsinline preload="metadata"></video><div><strong>Impresion</strong></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-02.mp4" controls muted playsinline preload="metadata"></video><div><strong>Impresion</strong></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-03.mp4" controls muted playsinline preload="metadata"></video><div><strong>Impresion</strong></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-04.mp4" controls muted playsinline preload="metadata"></video><div><strong>Impresion</strong></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-05.mp4" controls muted playsinline preload="metadata"></video><div><strong>Impresion</strong></div></article><article class="video-card"><video src="assets/video/nuevos/proceso-serigarsa-06.mp4" controls muted playsinline preload="metadata"></video><div><strong>Resultado de Impresion y Aplicacion</strong></div></article></div>
     </div>
 
 </section>
