@@ -192,92 +192,48 @@ textarea{min-height:132px;resize:vertical}
 video{width:100%;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow);background:#000}
 .floating-wa{position:fixed;right:22px;bottom:22px;z-index:90;background:var(--green);color:#fff;border-radius:999px;padding:15px 18px;font-weight:900;box-shadow:0 12px 34px rgba(0,0,0,.24)}
 footer{margin-top:40px;padding:26px 0 0;color:var(--muted);text-align:center;font-size:13px}
-.visual-debug{position:fixed;left:16px;bottom:16px;z-index:94;max-width:min(320px,calc(100vw - 32px));font-size:13px}
-.visual-debug-shell{display:grid;gap:8px}
-.visual-debug-toggle{list-style:none;min-height:42px;border:1px solid var(--ink);border-radius:999px;background:color-mix(in srgb,var(--surface) 92%,#000);color:var(--ink);font-weight:900;padding:0 18px;box-shadow:var(--shadow-soft);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;user-select:none}
-.visual-debug-toggle::-webkit-details-marker{display:none}
-.visual-debug-toggle::after{content:"+";width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);font-weight:900}
-.visual-debug-shell[open] .visual-debug-toggle::after{content:"-"}
-.visual-debug-panel{background:color-mix(in srgb,var(--surface) 96%,#000);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow);display:grid;gap:10px;max-height:min(72vh,620px);overflow-y:auto;scrollbar-width:thin}
-.visual-debug-panel strong{font-family:"Fredoka","Poppins",Arial,sans-serif;font-size:16px}
-.visual-debug-group{border:1px solid var(--line);border-radius:12px;background:var(--surface-2);overflow:hidden}
-.visual-debug-group summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:40px;color:var(--muted);font-weight:900;font-size:12px;padding:0 12px;cursor:pointer;user-select:none}
-.visual-debug-group summary::-webkit-details-marker{display:none}
-.visual-debug-group summary::after{content:"+";width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:var(--ink);font-weight:900;pointer-events:none}
-.visual-debug-group[open]{border-color:color-mix(in srgb,var(--cyan) 36%,var(--line));background:color-mix(in srgb,var(--surface-2) 82%,#fff)}
-.visual-debug-group[open] summary{color:var(--ink);border-bottom:1px solid var(--line)}
-.visual-debug-group[open] summary::after{content:"-"}
-.visual-debug-options{display:flex;flex-wrap:wrap;gap:7px}
-.visual-debug-group .visual-debug-options{padding:10px}
-.visual-debug-options button{border:1px solid var(--line);border-radius:999px;background:var(--surface-2);color:var(--muted);min-height:34px;padding:0 11px;font-weight:900;font-size:12px;cursor:pointer}
-.visual-debug-options button[aria-pressed="true"]{background:linear-gradient(135deg,var(--cyan),var(--yellow));border-color:transparent;color:#111}
-.color-options button{position:relative;padding-left:28px}
-.color-options button::before{content:"";position:absolute;left:10px;top:50%;width:11px;height:11px;border-radius:50%;transform:translateY(-50%);background:var(--swatch,#050505);border:1px solid rgba(255,255,255,.35)}
-.color-options [data-color-mode="default"]{--swatch:#09090b}
-.color-options [data-color-mode="ink"]{--swatch:#050505}
-.color-options [data-color-mode="graphite"]{--swatch:#111114}
-.color-options [data-color-mode="petrol"]{--swatch:#071316}
-.color-options [data-color-mode="purple"]{--swatch:#140716}
-.color-options [data-color-mode="green"]{--swatch:#07130d}
-.color-options [data-accent-mode="default"]{--swatch:linear-gradient(135deg,var(--cyan),var(--magenta),var(--yellow))}
-.color-options [data-accent-mode="cyan"]{--swatch:#18d8e8}
-.color-options [data-accent-mode="magenta"]{--swatch:#f500c8}
-.color-options [data-accent-mode="yellow"]{--swatch:#f7ff00}
-.color-options [data-accent-mode="green"]{--swatch:#25d366}
-.color-options [data-accent-mode="white"]{--swatch:#ffffff}
-.visual-debug-panel small{color:var(--muted);line-height:1.45}
-body.visual-accent-cyan{--accent-live:var(--cyan);--accent-live-2:#8cf7ff;--accent-ink:#071316}
-body.visual-accent-magenta{--accent-live:var(--magenta);--accent-live-2:#ff7be8;--accent-ink:#1a0716}
-body.visual-accent-yellow{--accent-live:var(--yellow);--accent-live-2:#fff9a8;--accent-ink:#171704}
-body.visual-accent-green{--accent-live:var(--green);--accent-live-2:#8dffb8;--accent-ink:#07130d}
-body.visual-accent-white{--accent-live:#fff;--accent-live-2:#d7d9e2;--accent-ink:#08080a}
-body[class*="visual-accent-"] .accent{color:var(--accent-live)}
-body[class*="visual-accent-"] .btn-primary,
-body[class*="visual-accent-"] .tab.active,
-body[class*="visual-accent-"] .hero-mode-controls button[aria-pressed="true"],
-body[class*="visual-accent-"] .visual-debug-options button[aria-pressed="true"]{background:linear-gradient(135deg,var(--accent-live),var(--accent-live-2));border-color:transparent;color:var(--accent-ink)}
-body[class*="visual-accent-"] .category-title{border-left-color:var(--accent-live)}
-body[class*="visual-accent-"] .service-card::before{background:linear-gradient(90deg,var(--accent-live),var(--accent-live-2))}
-body[class*="visual-accent-"] .icon{background:linear-gradient(135deg,var(--accent-live),var(--accent-live-2));color:var(--accent-ink)}
-body.visual-card-glass .card,
-body.visual-card-glass .product-card,
-body.visual-card-glass .contact-card,
-body.visual-card-glass .preview-section,
-body.visual-card-glass .terms-card,
-body.visual-card-glass form,
-body.visual-card-glass .notice{background:rgba(20,20,24,.66);backdrop-filter:blur(18px);border-color:rgba(255,255,255,.16)}
 body.visual-card-neon .card,
 body.visual-card-neon .product-card,
 body.visual-card-neon .contact-card,
 body.visual-card-neon .preview-thumb,
+body.visual-card-neon .preview-section,
+body.visual-card-neon .terms-card,
 body.visual-card-neon form,
-body.visual-card-neon .notice{border-color:color-mix(in srgb,var(--accent-live,var(--cyan)) 58%,var(--line));box-shadow:0 0 0 1px rgba(255,255,255,.04),0 0 26px color-mix(in srgb,var(--accent-live,var(--cyan)) 24%,transparent)}
-body.visual-card-minimal .card,
-body.visual-card-minimal .product-card,
-body.visual-card-minimal .contact-card,
-body.visual-card-minimal .preview-thumb,
-body.visual-card-minimal form,
-body.visual-card-minimal .notice{box-shadow:none;border-color:#343640;background:#101014}
-body.visual-image-soft .product-media img,
-body.visual-image-soft .preview-thumb,
-body.visual-image-soft .gallery-mini img,
-body.visual-image-soft .hero-card-img,
-body.visual-image-soft .collage-item{border-radius:28px}
-body.visual-image-sharp .product-card,
-body.visual-image-sharp .product-media,
-body.visual-image-sharp .preview-thumb,
-body.visual-image-sharp .gallery-mini img,
-body.visual-image-sharp .hero-card-img,
-body.visual-image-sharp .collage-item{border-radius:6px}
+body.visual-card-neon .notice,
+body.visual-card-neon .video-card{--card-neon:var(--accent-live,var(--cyan));border-color:color-mix(in srgb,var(--card-neon) 62%,var(--line));box-shadow:0 0 0 1px rgba(255,255,255,.04),0 0 28px color-mix(in srgb,var(--card-neon) 28%,transparent), inset 0 1px 0 color-mix(in srgb,var(--card-neon) 12%,transparent)}
+body.visual-card-neon .card .icon,
+body.visual-card-neon .service-card .icon{background:linear-gradient(135deg,var(--card-neon),color-mix(in srgb,var(--card-neon) 45%,#fff));color:#101014}
+body.visual-card-neon .product-topline{background:linear-gradient(90deg,var(--card-neon),color-mix(in srgb,var(--card-neon) 35%,#fff));color:#101014}
+body.visual-card-neon .tag-list span,
+body.visual-card-neon .chips span{border-color:color-mix(in srgb,var(--card-neon) 42%,var(--line));background:color-mix(in srgb,var(--card-neon) 10%,var(--surface-2));color:var(--ink)}
+body.visual-card-neon .grid .card:nth-child(1),
+body.visual-card-neon .service-card:nth-child(1),
+body.visual-card-neon #car-textiles .product-card,
+body.visual-card-neon .contact-card:nth-child(1){--card-neon:var(--cyan)}
+body.visual-card-neon .grid .card:nth-child(2),
+body.visual-card-neon .service-card:nth-child(2),
+body.visual-card-neon #car-bolsas .product-card,
+body.visual-card-neon .notice{--card-neon:var(--green)}
+body.visual-card-neon .grid .card:nth-child(3),
+body.visual-card-neon .service-card:nth-child(3),
+body.visual-card-neon #car-tazas .product-card,
+body.visual-card-neon .payment-card{--card-neon:var(--magenta)}
+body.visual-card-neon .service-card:nth-child(4),
+body.visual-card-neon #car-promocionales .product-card,
+body.visual-card-neon #car-promos .product-card,
+body.visual-card-neon .preview-section{--card-neon:var(--yellow)}
+body.visual-card-neon .service-card:nth-child(5),
+body.visual-card-neon #car-gran .product-card,
+body.visual-card-neon .terms-card,
+body.visual-card-neon .video-card{--card-neon:var(--cyan)}
+body.visual-card-neon .service-card:nth-child(6),
+body.visual-card-neon .contact-card:nth-child(2){--card-neon:#ffffff}
 body.visual-image-tilt .product-card:nth-child(odd),
 body.visual-image-tilt .preview-thumb:nth-child(odd){transform:rotate(-.8deg)}
 body.visual-image-tilt .product-card:nth-child(even),
 body.visual-image-tilt .preview-thumb:nth-child(even){transform:rotate(.8deg)}
 body.visual-image-tilt .product-card:hover,
 body.visual-image-tilt .preview-thumb:hover{transform:translateY(-4px) rotate(0deg)}
-body.visual-motion-calm *,
-body.visual-motion-calm *::before,
-body.visual-motion-calm *::after{animation:none!important;transition-duration:.12s!important}
 body.visual-motion-impact .hero,
 body.visual-motion-impact .product-collage,
 body.visual-motion-impact .hero-visual{animation:impactRise .58s ease both}
@@ -288,52 +244,6 @@ body.visual-motion-impact .collage-item,
 body.visual-motion-impact .hero-card-img{animation:floatCard 5s ease-in-out infinite}
 body.visual-motion-impact .collage-item:nth-child(2n),
 body.visual-motion-impact .hero-card-img:nth-child(2n){animation-delay:-1.4s}
-body.visual-tone-ink{--visual-bg-base:#050505}
-body.visual-tone-graphite{--visual-bg-base:#111114}
-body.visual-tone-petrol{--visual-bg-base:#071316}
-body.visual-tone-purple{--visual-bg-base:#140716}
-body.visual-tone-green{--visual-bg-base:#07130d}
-body.visual-tone-ink,
-body.visual-tone-graphite,
-body.visual-tone-petrol,
-body.visual-tone-purple,
-body.visual-tone-green{
-  background:
-    linear-gradient(135deg,rgba(24,216,232,.045),transparent 28%),
-    linear-gradient(225deg,rgba(245,0,200,.05),transparent 32%),
-    var(--visual-bg-base);
-}
-body.visual-bg-brick{
-  background-color:var(--visual-bg-base,#050505);
-  background-image:
-    linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.68)),
-    repeating-linear-gradient(0deg,rgba(255,255,255,.34) 0 1px,rgba(255,255,255,.10) 1px 2px,transparent 2px 48px),
-    repeating-linear-gradient(90deg,rgba(255,255,255,.30) 0 1px,rgba(255,255,255,.08) 1px 2px,transparent 2px 96px),
-    linear-gradient(90deg,transparent 0 48px,rgba(255,255,255,.26) 48px 49px,rgba(255,255,255,.08) 49px 50px,transparent 50px 96px);
-  background-size:auto,96px 48px,96px 48px,192px 96px;
-  background-position:center,0 0,0 0,48px 48px;
-  background-attachment:fixed;
-}
-body.visual-bg-halftone{
-  background-color:var(--visual-bg-base,#070707);
-  background-image:
-    linear-gradient(rgba(0,0,0,.64),rgba(0,0,0,.74)),
-    radial-gradient(circle,rgba(255,255,255,.22) 0 1.4px,transparent 1.6px);
-  background-size:auto,18px 18px;
-  background-position:center,0 0;
-  background-attachment:fixed;
-}
-body.visual-bg-grid{
-  background-color:var(--visual-bg-base,#060606);
-  background-image:
-    linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.72)),
-    linear-gradient(rgba(255,255,255,.22) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.22) 1px,transparent 1px),
-    linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
-  background-size:auto,120px 120px,120px 120px,24px 24px,24px 24px;
-  background-attachment:fixed;
-}
 body.visual-bg-diagonal{
   background-color:var(--visual-bg-base,#060606);
   background-image:
@@ -342,9 +252,6 @@ body.visual-bg-diagonal{
     repeating-linear-gradient(45deg,rgba(255,255,255,.08) 0 1px,transparent 1px 42px);
   background-attachment:fixed;
 }
-body.visual-bg-brick header,
-body.visual-bg-halftone header,
-body.visual-bg-grid header,
 body.visual-bg-diagonal header{
   background:rgba(5,5,5,.88);
 }
