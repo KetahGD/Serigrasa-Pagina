@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.body.classList.add(
     "hero-mode-classic",
-    "visual-bg-diagonal",
+    "visual-bg-soft",
     "visual-card-neon",
     "visual-image-tilt",
     "visual-motion-impact"
