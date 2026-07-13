@@ -53,9 +53,15 @@ header{position:relative;z-index:50;background:color-mix(in srgb, var(--bg) 92%,
 .social-icon-img{width:23px;height:23px;object-fit:contain;display:block}
 .icon-link .social-icon-img{filter:none}
 .layout{max-width:1200px;margin:auto;padding:22px 20px 70px}
-.menu-toggle{width:54px;min-width:54px;background:var(--surface-2);flex:0 0 auto;padding:0}
-.menu-bars{width:21px;height:17px;display:flex;flex-direction:column;justify-content:space-between}
-.menu-bars span{display:block;width:100%;height:2.5px;border-radius:999px;background:currentColor}
+.menu-toggle{width:54px;min-width:54px;background:linear-gradient(145deg,rgba(24,216,232,.18),rgba(245,0,200,.12)),var(--surface-2);border-color:color-mix(in srgb,var(--cyan) 42%,var(--line));border-radius:16px;flex:0 0 auto;padding:0;position:relative;overflow:hidden}
+.menu-toggle::before{content:"";position:absolute;inset:1px;border-radius:14px;border:1px solid rgba(255,255,255,.08);pointer-events:none}
+.menu-bars{position:relative;z-index:1;width:23px;height:17px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start}
+.menu-bars span{display:block;height:2.5px;border-radius:999px;background:linear-gradient(90deg,var(--cyan),#fff);box-shadow:0 0 10px rgba(24,216,232,.45)}
+.menu-bars span:nth-child(1){width:70%}
+.menu-bars span:nth-child(2){width:100%}
+.menu-bars span:nth-child(3){width:82%}
+.menu-toggle:hover .menu-bars span:nth-child(1),
+.menu-toggle:hover .menu-bars span:nth-child(3){width:100%}
 .sidebar-backdrop{position:fixed;inset:0;z-index:89;border:0;background:rgba(0,0,0,.58);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .22s ease}
 .sidebar{position:fixed;top:0;left:0;bottom:0;z-index:90;width:min(86vw,320px);background:color-mix(in srgb,var(--surface) 96%,#000);border-right:1px solid var(--line);padding:16px;box-shadow:var(--shadow);backdrop-filter:blur(16px);transform:translateX(-104%);transition:transform .24s ease;overflow-y:auto}
 body.sidebar-open .sidebar{transform:translateX(0)}
