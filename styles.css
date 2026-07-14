@@ -533,7 +533,11 @@ body.visual-bg-soft header{
 .work-video-card div{padding:15px;}
 .work-video-card strong{display:block;font-weight:900;margin-bottom:4px;}
 .work-video-card p{margin:0;color:var(--muted);line-height:1.5;font-size:13px;}
-@media(max-width:760px){.service-price-grid{grid-template-columns:1fr;}.service-price-card{grid-template-columns:1fr;}.service-price-card img{height:240px;}}
+.work-video-section{margin-top:18px;}
+.work-video-wide{display:grid;grid-template-columns:minmax(260px,420px) 1fr;align-items:stretch;margin-top:0;}
+.work-video-wide video{aspect-ratio:16/9;max-height:300px;object-fit:contain;background:#000;}
+.work-video-wide div{display:grid;align-content:center;padding:20px;}
+@media(max-width:760px){.service-price-grid{grid-template-columns:1fr;}.service-price-card{grid-template-columns:1fr;}.service-price-card img{height:240px;}.work-video-wide{grid-template-columns:1fr;}.work-video-wide video{max-height:260px;}}
 
 
 /* Ajustes para destacar DTF / Plotter */
