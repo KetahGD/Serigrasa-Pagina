@@ -199,6 +199,8 @@ body.visual-card-neon .product-card,
 body.visual-card-neon .contact-card,
 body.visual-card-neon .preview-thumb,
 body.visual-card-neon .preview-section,
+body.visual-card-neon .service-price-card,
+body.visual-card-neon .work-video-card,
 body.visual-card-neon .terms-card,
 body.visual-card-neon form,
 body.visual-card-neon .notice,
@@ -223,6 +225,8 @@ body.visual-card-neon .payment-card{--card-neon:var(--magenta)}
 body.visual-card-neon .service-card:nth-child(4),
 body.visual-card-neon #car-promocionales .product-card,
 body.visual-card-neon #car-promos .product-card,
+body.visual-card-neon #car-kits .product-card,
+body.visual-card-neon .service-price-card,
 body.visual-card-neon .preview-section{--card-neon:var(--yellow)}
 body.visual-card-neon .service-card:nth-child(5),
 body.visual-card-neon #car-gran .product-card,
@@ -514,6 +518,22 @@ body.visual-bg-soft header{
 .video-card p{margin:0;color:var(--muted);line-height:1.5;font-size:13px;}
 @media(max-width:960px){.video-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:560px){.video-grid{grid-template-columns:1fr;}}
+.service-pricing-section{margin-top:34px;}
+.service-price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.service-price-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-soft);display:grid;grid-template-columns:180px 1fr;min-height:250px;}
+.service-price-card img{width:100%;height:100%;object-fit:cover;}
+.service-price-card div{padding:18px;display:grid;align-content:start;gap:10px;}
+.service-price-card h3{margin:0;font-size:25px;}
+.service-price-card p{margin:0;color:var(--muted);line-height:1.55;}
+.service-price-card small{color:var(--yellow);font-weight:900;}
+.price-badge{width:max-content;max-width:100%;border-radius:999px;background:linear-gradient(135deg,var(--cyan),var(--yellow));color:#111;padding:8px 12px;font-weight:900;font-size:13px;}
+.featured-price{border-color:color-mix(in srgb,var(--yellow) 45%,var(--line));}
+.work-video-card{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-soft);}
+.work-video-card video{width:100%;max-height:360px;object-fit:cover;border:0;border-radius:0;box-shadow:none;}
+.work-video-card div{padding:15px;}
+.work-video-card strong{display:block;font-weight:900;margin-bottom:4px;}
+.work-video-card p{margin:0;color:var(--muted);line-height:1.5;font-size:13px;}
+@media(max-width:760px){.service-price-grid{grid-template-columns:1fr;}.service-price-card{grid-template-columns:1fr;}.service-price-card img{height:240px;}}
 
 
 /* Ajustes para destacar DTF / Plotter */
