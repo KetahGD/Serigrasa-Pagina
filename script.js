@@ -38,6 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
     "visual-motion-impact"
   );
 
+  const applyTimeBackground = () => {
+    const hour = new Date().getHours();
+    const isDaytime = hour >= 8 && hour < 19;
+    document.body.classList.toggle("visual-day-soft", isDaytime);
+    document.body.dataset.backgroundSchedule = isDaytime ? "dia" : "noche";
+  };
+  applyTimeBackground();
+  window.setInterval(applyTimeBackground, 5 * 60 * 1000);
+
   const form = document.getElementById("quoteForm");
   if(form){
     const params = new URLSearchParams(window.location.search);

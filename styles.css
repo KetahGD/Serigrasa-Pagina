@@ -267,6 +267,78 @@ body.visual-bg-soft{
 body.visual-bg-soft header{
   background:rgba(7,7,9,.9);
 }
+body.visual-day-soft{
+  --bg:#f4efe4;
+  --surface:#fffaf0;
+  --surface-2:#eee6d7;
+  --ink:#171512;
+  --muted:#625f58;
+  --line:#ded2be;
+  --shadow:0 18px 44px rgba(71,58,38,.13);
+  --shadow-soft:0 10px 28px rgba(71,58,38,.09);
+  background-color:#f4efe4;
+  background-image:
+    linear-gradient(rgba(255,255,255,.42),rgba(244,239,228,.74)),
+    repeating-linear-gradient(135deg,rgba(56,45,27,.055) 0 1px,transparent 1px 28px),
+    radial-gradient(circle at 10% 8%, rgba(247,255,0,.18), transparent 29%),
+    radial-gradient(circle at 88% 2%, rgba(245,0,200,.08), transparent 34%),
+    radial-gradient(circle at 52% 104%, rgba(24,216,232,.10), transparent 38%),
+    linear-gradient(145deg,#faf7ef 0%,#f4efe4 48%,#eee5d5 100%);
+  color:var(--ink);
+}
+body.visual-day-soft .topbar{
+  background:#11100d;
+  color:#fffaf0;
+}
+body.visual-day-soft header{
+  background:rgba(250,247,239,.9);
+  border-bottom-color:var(--line);
+}
+body.visual-day-soft .sidebar{
+  background:rgba(255,250,240,.96);
+}
+body.visual-day-soft .sidebar-backdrop{
+  background:rgba(42,35,24,.34);
+}
+body.visual-day-soft .menu-icon-img{
+  filter:none;
+}
+body.visual-day-soft .btn-dark{
+  background:#11100d;
+  border-color:#11100d;
+  color:#fffaf0;
+}
+body.visual-day-soft .card,
+body.visual-day-soft .product-card,
+body.visual-day-soft .contact-card,
+body.visual-day-soft .preview-section,
+body.visual-day-soft .terms-card,
+body.visual-day-soft form,
+body.visual-day-soft .video-card,
+body.visual-day-soft .work-video-card{
+  background:color-mix(in srgb,var(--surface) 94%,#fff);
+}
+body.visual-day-soft .notice,
+body.visual-day-soft .step{
+  background:#171512;
+  color:#fffaf0;
+}
+body.visual-day-soft .socials .social-icon-img{
+  filter:invert(1);
+}
+body.visual-day-soft.visual-card-neon .card,
+body.visual-day-soft.visual-card-neon .product-card,
+body.visual-day-soft.visual-card-neon .contact-card,
+body.visual-day-soft.visual-card-neon .preview-thumb,
+body.visual-day-soft.visual-card-neon .preview-section,
+body.visual-day-soft.visual-card-neon .service-price-card,
+body.visual-day-soft.visual-card-neon .work-video-card,
+body.visual-day-soft.visual-card-neon .terms-card,
+body.visual-day-soft.visual-card-neon form,
+body.visual-day-soft.visual-card-neon .notice,
+body.visual-day-soft.visual-card-neon .video-card{
+  box-shadow:0 0 0 1px rgba(255,255,255,.72),0 0 22px color-mix(in srgb,var(--card-neon) 14%,transparent),0 12px 28px rgba(71,58,38,.08);
+}
 @keyframes pageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @keyframes softPop{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes impactRise{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
