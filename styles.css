@@ -185,6 +185,8 @@ textarea{min-height:132px;resize:vertical}
 .contact-item{display:flex;gap:12px;align-items:flex-start;padding:14px;background:var(--surface-2);border:1px solid var(--line);border-radius:18px}
 .contact-item strong{display:block}
 .contact-item span{color:var(--muted);line-height:1.45}
+.map-embed{margin-top:16px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#000;box-shadow:var(--shadow-soft)}
+.map-embed iframe{display:block;width:100%;height:340px;border:0}
 .socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .socials a{background:#111;color:#fff;border-radius:999px;padding:11px 14px;font-weight:900;font-size:14px;min-height:42px;display:inline-flex;align-items:center;justify-content:center}
 .socials a.social-icon-link{width:48px;padding:0}
