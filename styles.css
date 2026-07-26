@@ -143,6 +143,10 @@ body.hero-mode-classic .hero-collage{display:none}
 .product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--cyan) 38%,var(--line))}
 .product-media{height:270px;background:var(--surface-2);position:relative;overflow:hidden}
 .product-media img{width:100%;height:100%;object-fit:cover}
+.product-card--print{min-height:640px}
+.product-card--print .product-media{background:#f7f7f7}
+.product-card--print .product-media img{object-fit:contain}
+.product-card--print .tag-list{align-content:flex-start}
 .product-info{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .product-topline{width:max-content;background:linear-gradient(90deg,var(--yellow),#fff7a8);color:#111;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900}
 .product-info h4{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:58px}
@@ -467,6 +471,9 @@ body.visual-day-soft.visual-card-neon .video-card{
   grid-template-columns:repeat(4, minmax(0, 1fr));
   gap:14px;
 }
+.mini-visual-gallery .preview-grid{grid-template-columns:repeat(5, minmax(0, 1fr));}
+.mini-visual-gallery .preview-thumb{min-height:0;}
+.mini-visual-gallery .preview-thumb img{height:168px;}
 .preview-thumb{
   border:1px solid var(--line);
   background:var(--surface);
@@ -571,10 +578,13 @@ body.visual-day-soft.visual-card-neon .video-card{
 .image-lightbox-caption small{font-size:12px;color:var(--yellow);font-weight:900}
 @media(max-width:960px){
   .preview-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
+  .mini-visual-gallery .preview-grid{grid-template-columns:repeat(3, minmax(0, 1fr));}
 }
 @media(max-width:560px){
   .preview-grid{grid-template-columns:1fr;}
   .preview-thumb img{height:240px;}
+  .mini-visual-gallery .preview-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
+  .mini-visual-gallery .preview-thumb img{height:145px;}
   .image-lightbox{padding:14px}
   .image-lightbox img{max-width:94vw;max-height:78vh;border-radius:16px}
   .image-lightbox-caption{bottom:12px;border-radius:14px;width:calc(100% - 28px);font-size:12px}
