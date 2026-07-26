@@ -465,6 +465,7 @@ body.visual-day-soft.visual-card-neon .video-card{
 }
 .section-head.compact{
   margin-bottom:18px;
+  padding:18px 20px;
 }
 .preview-grid{
   display:grid;
@@ -583,6 +584,7 @@ body.visual-day-soft.visual-card-neon .video-card{
 @media(max-width:560px){
   .preview-grid{grid-template-columns:1fr;}
   .preview-thumb img{height:240px;}
+  .section-head.compact{padding:16px;}
   .mini-visual-gallery .preview-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
   .mini-visual-gallery .preview-thumb img{height:145px;}
   .image-lightbox{padding:14px}
