@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/informacion-general.html",
+      "permanent": true
+    }
+  ]
+}
