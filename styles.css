@@ -49,6 +49,9 @@ header{position:relative;z-index:50;background:color-mix(in srgb, var(--bg) 92%,
 .btn-wa{background:linear-gradient(135deg,var(--green),#18b957);border-color:var(--green);color:#fff}
 .btn-mail{background:linear-gradient(135deg,var(--cyan),#0aa6bd);border-color:var(--cyan);color:#111}
 .btn-dark{background:#fff;border-color:#fff;color:#111}
+.btn-wa:not(.icon-link)::before,
+.mini-btn.wa::before,
+.floating-wa::before{content:"";width:18px;height:18px;flex:0 0 18px;background:url("assets/icons/whatsapp.png") center/contain no-repeat;filter:brightness(0) invert(1)}
 .icon-link{width:54px;min-width:54px;padding:0}
 .social-icon-img{width:23px;height:23px;object-fit:contain;display:block}
 .icon-link .social-icon-img{filter:none}
@@ -75,7 +78,7 @@ body.sidebar-open{overflow:hidden}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted);font-size:14px;font-weight:900}
 h1,h2,h3,h4,p{margin-top:0}
 h1,h2,h3,h4{font-family:"Fredoka","Poppins",Arial,sans-serif;letter-spacing:-.7px}
-h1{font-size:68px;line-height:.95;margin:18px 0 16px}
+h1,.hero-title{font-size:68px;line-height:.95;margin:18px 0 16px}
 h2{font-size:44px;line-height:1;margin:0}
 h3{font-size:28px;margin-bottom:12px}
 h4{font-size:23px;margin:0 0 8px}

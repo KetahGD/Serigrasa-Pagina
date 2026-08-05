@@ -61,8 +61,8 @@
         <div><strong>SERIGARSA</strong><small>Publicidad y Diseño</small></div>
       </a>
       <div class="nav-actions">
-        <a class="btn btn-wa icon-link" target="_blank" href="https://wa.me/525544940431?text=Hola,%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20con%20SERIGARSA." aria-label="WhatsApp"><img loading="lazy" decoding="async" class="social-icon-img" src="assets/icons/whatsapp.png" alt="" aria-hidden="true"><span class="sr-only">WhatsApp</span></a>
-        <a class="btn btn-primary icon-link" href="https://www.instagram.com/garsa.serigrafia/" target="_blank" aria-label="Instagram"><img loading="lazy" decoding="async" class="social-icon-img" src="assets/icons/instagram.png" alt="" aria-hidden="true"><span class="sr-only">Instagram</span></a>
+        <a class="btn btn-wa icon-link" target="_blank" href="https://wa.me/525544940431?text=Hola,%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20con%20SERIGARSA." aria-label="WhatsApp" rel="noopener noreferrer"><img loading="lazy" decoding="async" class="social-icon-img" src="assets/icons/whatsapp.png" alt="" aria-hidden="true"><span class="sr-only">WhatsApp</span></a>
+        <a class="btn btn-primary icon-link" href="https://www.instagram.com/garsa.serigrafia/" target="_blank" aria-label="Instagram" rel="noopener noreferrer"><img loading="lazy" decoding="async" class="social-icon-img" src="assets/icons/instagram.png" alt="" aria-hidden="true"><span class="sr-only">Instagram</span></a>
       </div>
     </div>
   </header>
@@ -89,11 +89,15 @@
   <div class="quote-layout">
     <form id="quoteForm">
       <div class="form-row">
+        <label class="sr-only" for="nombre">Nombre completo</label>
         <input id="nombre" type="text" placeholder="Nombre completo" required>
+        <label class="sr-only" for="telefono">WhatsApp</label>
         <input id="telefono" type="tel" placeholder="WhatsApp" required>
       </div>
       <div class="form-row">
+        <label class="sr-only" for="correo">Correo electrónico opcional</label>
         <input id="correo" type="email" placeholder="Correo electrónico opcional">
+        <label class="sr-only" for="producto">Producto o servicio de interés</label>
         <select id="producto" required>
           <option value="">Producto o servicio de interés</option>
           <option>DTF textil por metro lineal</option>
@@ -113,19 +117,23 @@
         </select>
       </div>
       <div class="form-row">
+        <label class="sr-only" for="cantidad">Cantidad aproximada</label>
         <input id="cantidad" type="text" placeholder="Cantidad aproximada">
+        <label class="sr-only" for="fecha">Fecha de entrega deseada</label>
         <input id="fecha" type="text" placeholder="Fecha de entrega deseada">
       </div>
+      <label class="sr-only" for="diseno">¿Ya cuentas con diseño?</label>
       <select id="diseno">
         <option value="">¿Ya cuentas con diseño?</option>
         <option>Sí, tengo archivo en PDF o vector</option>
         <option>Sí, pero necesito revisión</option>
         <option>No, necesito apoyo con diseño</option>
       </select>
+      <label class="sr-only" for="mensaje">Detalles del pedido</label>
       <textarea id="mensaje" placeholder="Describe el producto, colores, medidas, uso, acabados o referencias importantes."></textarea>
       <p class="quote-note">Importante: al enviar la solicitud por WhatsApp o correo, adjunta las imágenes, logotipo o PDF del diseño que deseas cotizar.</p>
       <div class="quote-actions">
-        <button class="btn btn-wa" type="submit" data-send="whatsapp"><span aria-hidden="true">WA</span><span>Enviar por WhatsApp</span></button>
+        <button class="btn btn-wa" type="submit" data-send="whatsapp"><span>Enviar por WhatsApp</span></button>
         <button class="btn btn-mail" type="submit" data-send="email"><span aria-hidden="true">&#9993;</span><span>Enviar por correo</span></button>
       </div>
     </form>
