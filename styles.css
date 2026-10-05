@@ -15,6 +15,33 @@
   --radius:22px;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
+.origin-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 22px;flex-wrap:wrap}
+.origin-dialog{width:min(660px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;padding:36px;border:1px solid var(--cyan);border-radius:28px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow),0 0 32px rgba(24,216,232,.15)}
+.origin-dialog::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(7px)}
+.origin-dialog h2{margin:18px 0 12px;font-size:40px}
+.origin-dialog > p{color:var(--muted);line-height:1.6}
+.origin-close{position:absolute;right:14px;top:12px;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:var(--surface-2);color:var(--ink);font-size:24px;cursor:pointer}
+.origin-options{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.origin-option{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:22px;border:1px solid var(--cyan);border-radius:22px;background:var(--surface-2);color:var(--ink);text-align:left;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.origin-option:nth-child(2){border-color:var(--yellow)}
+.origin-option:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(24,216,232,.18)}
+.origin-option strong{font-family:"Fredoka",sans-serif;font-size:24px}
+.origin-option > span:last-child{font-size:14px;color:var(--muted);line-height:1.6}
+.origin-option img,.origin-web{width:44px;height:44px;object-fit:contain}
+.origin-web{display:grid;place-items:center;border-radius:50%;background:var(--yellow);color:#111;font-size:30px}
+.tiktok-guide{margin-bottom:22px}
+.tiktok-guide p,.tiktok-guide li{line-height:1.65}
+.tiktok-guide .eyebrow{background:#252529;color:var(--cyan);border-color:#414147}
+.tiktok-guide .origin-mail{background:var(--cyan);overflow-wrap:anywhere;word-break:break-word}
+.origin-file-note{font-size:14px;color:#e9e9e9}
+.tiktok-identity{display:grid;gap:12px}
+.tiktok-identity label{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+.tiktok-identity input{width:100%}
+.tiktok-identity small{color:var(--muted)}
+.tiktok-contact-form{margin-bottom:22px;display:grid;gap:18px}
+:is(.origin-option,.origin-close,.origin-banner button):focus-visible{outline:3px solid var(--magenta);outline-offset:4px}
+@media(max-width:600px){.origin-dialog{padding:28px 20px}.origin-dialog h2{font-size:32px}.origin-options{grid-template-columns:1fr}.origin-option{padding:18px;gap:8px}}
 html{scroll-behavior:smooth}
 html,body{max-width:100%;overflow-x:hidden}
 body{
