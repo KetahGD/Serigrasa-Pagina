@@ -181,6 +181,14 @@ body.hero-mode-classic .hero-collage{display:none}
 .product-card--print .product-media{background:#f7f7f7}
 .product-card--print .product-media img{object-fit:contain}
 .product-card--business-cards .product-info p{display:block;overflow:visible;-webkit-line-clamp:unset}
+.business-card-details{padding-left:18px;margin:10px 0;color:var(--muted);font-size:13px;line-height:1.65}
+.business-card-details li+li{margin-top:5px}
+.business-card-check{margin:12px 0;color:var(--muted);font-size:13px;line-height:1.6}
+.business-card-check summary{cursor:pointer;color:var(--ink);font-weight:800}
+.business-card-check p{margin-top:10px!important}
+.business-card-guide{margin-top:18px;padding:22px;border:1px solid var(--line);border-radius:22px;background:var(--surface-2)}
+.business-card-guide h3{margin:0 0 12px}
+.business-card-guide p{color:var(--muted);line-height:1.7;font-size:14px}
 .service-price-card img[src*="tarjetas-economicas-"],.service-price-card img[src*="tarjetas-laminadas-"]{object-fit:contain;background:#faf9f4;cursor:zoom-in}
 .product-card--print .tag-list{align-content:flex-start}
 .product-info{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
