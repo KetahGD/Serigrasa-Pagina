@@ -180,6 +180,8 @@ body.hero-mode-classic .hero-collage{display:none}
 .product-card--print{min-height:640px}
 .product-card--print .product-media{background:#f7f7f7}
 .product-card--print .product-media img{object-fit:contain}
+.product-card--business-cards .product-info p{display:block;overflow:visible;-webkit-line-clamp:unset}
+.service-price-card img[src*="tarjetas-economicas-"],.service-price-card img[src*="tarjetas-laminadas-"]{object-fit:contain;background:#faf9f4;cursor:zoom-in}
 .product-card--print .tag-list{align-content:flex-start}
 .product-info{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .product-topline{width:max-content;background:linear-gradient(90deg,var(--yellow),#fff7a8);color:#111;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900}

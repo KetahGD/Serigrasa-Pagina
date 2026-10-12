@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   };
 
-  document.querySelectorAll(".product-media img, .gallery-mini img, .hero-card-img img, .collage-item img, .preview-grid img").forEach((img) => {
+  document.querySelectorAll(".product-media img, .service-price-card img, .gallery-mini img, .hero-card-img img, .collage-item img, .preview-grid img").forEach((img) => {
     img.setAttribute("tabindex", "0");
     img.addEventListener("click", () => openLightbox(img));
     img.addEventListener("keydown", (e) => {
