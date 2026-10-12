@@ -168,7 +168,7 @@ body.hero-mode-classic .hero-collage{display:none}
 .category-title p{margin:0;color:var(--muted);font-weight:700}
 .carousel-wrap{display:flex;align-items:center;gap:10px}
 .arrow{flex:0 0 auto;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);box-shadow:0 8px 20px rgba(0,0,0,.04);font-size:22px;font-weight:900;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease}
-.carousel{flex:1;display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;padding:6px 4px 18px;scrollbar-width:none;scroll-snap-type:x mandatory}
+.carousel{flex:1;display:flex;align-items:flex-start;gap:16px;overflow-x:auto;scroll-behavior:smooth;padding:6px 4px 18px;scrollbar-width:none;scroll-snap-type:x mandatory}
 .carousel::-webkit-scrollbar{display:none}
 .product-card{flex:0 0 330px;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;min-height:610px}
 .product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--cyan) 38%,var(--line))}
